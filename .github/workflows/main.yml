@@ -1,0 +1,16 @@
+on:
+  workflow_call:
+    inputs:
+      front-end:
+        description: 'what front end stack are we using'
+        default: 'react'
+        required: false
+        type: string
+
+jobs:
+  print-username:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: This is the front end you are using
+        run: echo The username is ${{ inputs.username }}
